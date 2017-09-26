@@ -6,6 +6,9 @@ Features:
 - Scan all wireless networks detected in range.
 - Select one of the wireless networks ans a target and deploy an attack.
 
+Requirements:
+- Created with Ruby 2.4.1
+
 Bugs:
 - Does not work yet. Work in progress.
 
