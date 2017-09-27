@@ -1,0 +1,2 @@
+class OuIsController < ApplicationController
+end
