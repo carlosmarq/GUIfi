@@ -1,0 +1,40 @@
+<h1>Test information:</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1> <strong>Identified networks</strong> </h1>
+<div>
+<br>
+<br>
+<br>
+
+<table>
+  <tr>
+    <th>GUIfi</th>
+  </tr>
+  <%= @Networks.each do |st| %>
+    <tr>
+      <td><%= st.id %></td>
+      <td><%= st.bssid %></td>
+      <td><%= st.channel %></td>
+      <td><%= st.Speed %></td>
+      <td><%= st.Privacy %></td>
+      <td><%= st.Cipher %></td>
+      <td><%= st.Last_time_seen %></td>
+      <td><%= st.IV %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<br>
+<br>
+<br>
+
+<div>
+
+
+<h1><%= @Date %></h1>
+</div>

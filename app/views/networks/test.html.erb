@@ -1,14 +1,10 @@
 <h1>Test SO shell command</h1>
-<%= form_for @ticket do |f| %>
-
-  <%= f.label :plate %><br>
-  <%= f.text_field :plate %><br>
-  <%= f.label :v_type %><br>
-  <%= f.text_area :v_type %><br>
-  <%= f.submit "Add ticket" %><br>
 
 
+<strong>Pid: </strong><span><%= @pid %></span><br>
+<br>
+<strong>Out: </strong><span><%= @out %></span><br>
+<br>
 
-<% end %>
 
-<%= link_to "show", tickets_path %>
+<%= link_to "Home", networks_path %>
