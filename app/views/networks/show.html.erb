@@ -1,9 +1,3 @@
-<h1>Test information:</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
 <h1> <strong>Identified networks</strong> </h1>
 <div>
 <br>
@@ -14,8 +8,9 @@
   <tr>
     <th>GUIfi</th>
   </tr>
-  <%= @Networks.each do |st| %>
+  <% @Networks.each do |st| %>
     <tr>
+      <td><%= link_to "Attack", attack_path(st.id)%></td>
       <td><%= st.id %></td>
       <td><%= st.bssid %></td>
       <td><%= st.channel %></td>
@@ -24,6 +19,7 @@
       <td><%= st.Cipher %></td>
       <td><%= st.Last_time_seen %></td>
       <td><%= st.IV %></td>
+
     </tr>
   <% end %>
 </table>
@@ -38,3 +34,6 @@
 
 <h1><%= @Date %></h1>
 </div>
+
+<%= link_to "Home", networks_path %>
+<%= link_to "Test", test_path %>
