@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/networks/load' => 'networks#load', as: :load
   get '/networks/kill' => 'networks#kill', as: :kill
   get '/networks/scan' => 'networks#scan', as: :scan
+  get '/networks/report' => 'networks#report', as: :report
   get '/networks/:id/attack' => 'networks#attack', as: :attack
 
   resources :networks

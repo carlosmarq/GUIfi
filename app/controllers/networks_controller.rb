@@ -1,6 +1,9 @@
 class NetworksController < ApplicationController
       require 'csv'
       require 'open3'
+      require 'chartkick'
+      require 'groupdate'
+      require 'active_median'
 
 
   def index
@@ -16,6 +19,15 @@ class NetworksController < ApplicationController
 
   def test
     @iwconfig = `iwconfig`
+
+  end
+
+  def report
+    @Networks = Network.all
+    #@Network_data = Network.limit(5).order('Data')
+    @Networks_data = Network.all.order("Data").limit(5)
+
+
   end
 
   def load

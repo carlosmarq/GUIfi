@@ -1,0 +1,40 @@
+<%= javascript_include_tag "//www.google.com/jsapi" %>
+<%= javascript_include_tag "application", "chartkick" %>
+
+
+<h1>Scanning Report</h1>
+
+
+<br>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h3>Total Networks by Channel</h3>
+    <%= pie_chart @Networks.group(:Encryption).count %>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h3>Total Networks by Channel</h3>
+        <%= column_chart @Networks.group(:Channel).count %>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-xs-6">
+    <h3>Total Networks by Channel</h3>
+        <%= column_chart @Networks.pluck(:ESSID, :Data), xtitle: "Network", ytitle: "Number of packets", label: "Value" %>
+  </div>
+</div>
+<br>
+<br>
+
+<%= link_to "Home", networks_path %>
+<%= link_to "Test", test_path %>
+<%= link_to "Load", load_path %>
+<%= link_to "Kill", kill_path %>
+<%= link_to "Scan", scan_path %>

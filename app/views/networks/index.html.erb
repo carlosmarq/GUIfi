@@ -1,35 +1,62 @@
-<h1>AirCrack GUIfi</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AirCrack GUIfi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>GUIfi 0.1</h1>
+  <p>A graphic web interfase for Aircrack running on Rails</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>System information</h3>
+      <strong>Date and Time: </strong><span><%= @Date %></span><br>
+      <br>
+      <strong>Hostname: </strong><span><%= @Hostname %></span><br>
+      <br>
+      <strong>Current User: </strong><span><%= @User %></span><br>
+
+    </div>
+    <div class="col-sm-4">
+      <h3>Wireless interfaces</h3>
+      <strong>Network Information: </strong><span><%= @NetworkInf %></span><br>
+      <br>
+      <strong>Wireless interfaces: </strong><span><%= @airmonstat  %></span><br>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <h3>Aircrack Status</h3>
+
+      <strong>Checking processes: </strong><span><%= @airmoncheck  %></span><br>
+      <strong>Killing intruder processes:</strong><span><%= @airmonkill  %></span><br>
+      <strong>Monitor mode in wlan0::</strong><span><%= @airmonstart  %></span><br>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+<div class="container">
+  <h2>Options</h2>
+  <button type="button" class="btn" onclick="window.location.href='/networks'" >Home</button>
+  <button type="button" class="btn btn-default" onclick="window.location.href='networks/test'" >Test</button>
+  <button type="button" class="btn btn-success"  onclick="window.location.href='networks/scan'" >Scan</button>
+  <button type="button" class="btn btn-info" onclick="window.location.href='networks/show'" >Show</button>
+  <button type="button" class="btn btn-primary"  onclick="window.location.href='networks/report'" >Report</button>
+  <button type="button" class="btn btn-warning" onclick="window.location.href='networks/load'" >Load static</button>
+  <button type="button" class="btn btn-danger" onclick="window.location.href='networks/kill'" >Kill</button>
 <br>
-<h2>System information</h2>
-
-<strong>Date and Time: </strong><span><%= @Date %></span><br>
-<strong>Hostname: </strong><span><%= @Hostname %></span><br>
-<strong>Current User: </strong><span><%= @User %></span><br>
-<strong>Network Information: </strong><span><%= @NetworkInf %></span><br>
-<br>
-
-
-<h3> Checking status of wireless interfaces: </h3>
-<span> <%= @airmonstat %> </span>
-<br>
-<h3> Checking processes: </h3>
-<span> <%= @airmoncheck %> </span>
-<br>
-<h3> Killing intruder processes: </h3>
-<span> <%= @airmonkill %> </span>
-<br>
-<h3> Starting Monitor mode in wlan0 (Yes wlan0!): </h3>
-<span> <%= @airmonstart %> </span>
-<br>
-<br>
-
-
-
-
-
-
-<%= link_to "Home", networks_path %>
-<%= link_to "Test", test_path %>
-<%= link_to "Load", load_path %>
-<%= link_to "Kill", kill_path %>
-<%= link_to "Scan", scan_path %>
+</div>
