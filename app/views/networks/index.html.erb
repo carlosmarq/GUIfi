@@ -2,14 +2,14 @@
 <br>
 <h2>System information</h2>
 
-
 <strong>Date and Time: </strong><span><%= @Date %></span><br>
 <strong>Hostname: </strong><span><%= @Hostname %></span><br>
 <strong>Current User: </strong><span><%= @User %></span><br>
 <strong>Network Information: </strong><span><%= @NetworkInf %></span><br>
 <br>
 
-<h3> Checking statys ff wireless interfaces: </h3>
+
+<h3> Checking status of wireless interfaces: </h3>
 <span> <%= @airmonstat %> </span>
 <br>
 <h3> Checking processes: </h3>
@@ -18,7 +18,7 @@
 <h3> Killing intruder processes: </h3>
 <span> <%= @airmonkill %> </span>
 <br>
-<h3> Startin Monitor mode in wlan0 (Yes wlan0!): </h3>
+<h3> Starting Monitor mode in wlan0 (Yes wlan0!): </h3>
 <span> <%= @airmonstart %> </span>
 <br>
 <br>
@@ -30,3 +30,6 @@
 
 <%= link_to "Home", networks_path %>
 <%= link_to "Test", test_path %>
+<%= link_to "Load", load_path %>
+<%= link_to "Kill", kill_path %>
+<%= link_to "Scan", scan_path %>

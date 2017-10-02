@@ -1,9 +1,13 @@
 <h1>Test SO shell command</h1>
 
 
-<strong>Mode Monitor wlan0: </strong><span><%= @airmonstart %></span><br>
+<strong>iwconfig output: </strong><span><%= @iwconfig %></span><br>
+<br>
 <br>
 
 
 <%= link_to "Home", networks_path %>
 <%= link_to "Test", test_path %>
+<%= link_to "Load", load_path %>
+<%= link_to "Kill", kill_path %>
+<%= link_to "Scan", scan_path %>

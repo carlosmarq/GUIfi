@@ -1,0 +1,21 @@
+<h1>AirCrack GUIfi</h1>
+<br>
+<h2>System information</h2>
+
+<br>
+<strong>"airmon-ng stop wlan0mon": </strong><span><%= @killall    %></span><br>
+<br>
+<strong>Network Information: </strong><span><%= @NetworkInf %></span><br>
+<br>
+<br>
+
+
+
+
+
+
+<%= link_to "Home", networks_path %>
+<%= link_to "Test", test_path %>
+<%= link_to "Load", load_path %>
+<%= link_to "Kill", kill_path %>
+<%= link_to "Scan", scan_path %>

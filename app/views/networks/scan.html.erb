@@ -2,12 +2,17 @@
 <br>
 <h2>Reading Aircrack output...</h2>
 
-<br>
+<span> <%= @NetworkInf  %> </span>
 
+<br>
+<span> <%= @Networks_scan %> </span>
+
+<h2>Loaded data:</h2>
 <span> <%= @Networks_text_to_csv %> </span>
 
 
 <%= link_to "Home", networks_path %>
 <%= link_to "Test", test_path %>
+<%= link_to "Scan", scan_path %>
 <%= link_to "Load", load_path %>
 <%= link_to "Kill", kill_path %>

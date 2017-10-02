@@ -5,7 +5,47 @@
 <strong>Date and Time: </strong><span><%= @Date %></span><br>
 <strong>Hostname: </strong><span><%= @Hostname %></span><br>
 
+<strong>Attacking network: </strong><span><%= @Network_attack  %></span><br>
+<h2>20 deauthentiation packes will be send...</h2>
+<br>
+<br>
+
+<table>
+  <tr>
+    <th>GUIfi</th>
+  </tr>
+
+    <tr>
+      <td><%= @Network_attack.id %></td>
+      <td><%= @Network_attack.ESSID %></td>
+      <td><%= @Network_attack.BSSID %></td>
+      <td><%= @Network_attack.Channel %></td>
+      <td><%= @Network_attack.Encryption %></td>
+      <td><%= @Network_attack.Decrypted %></td>
+      <td><%= @Network_attack.LastTime %></td>
+    </tr>
+
+</table>
+<br>
+<br>
+<br>
+<h3> Stoping driver: </h3>
+<span> <%= @killall %> </span>
+<span> <%= @NetworkInf %> </span>
+<br>
+<br>
+<h3> Starting driver: </h3>
+<span> <%= @airmonstart %> </span>
+<br>
+<br>
+<h3> Attack output: </h3>
+<span> <%= @airreplayng %> </span>
 
 
+
+<br>
+<br>
 <%= link_to "Home", networks_path %>
 <%= link_to "Test", test_path %>
+<%= link_to "Load", load_path %>
+<%= link_to "Kill", kill_path %>

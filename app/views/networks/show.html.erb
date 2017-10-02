@@ -12,13 +12,13 @@
     <tr>
       <td><%= link_to "Attack", attack_path(st.id)%></td>
       <td><%= st.id %></td>
-      <td><%= st.bssid %></td>
-      <td><%= st.channel %></td>
-      <td><%= st.Speed %></td>
-      <td><%= st.Privacy %></td>
-      <td><%= st.Cipher %></td>
-      <td><%= st.Last_time_seen %></td>
-      <td><%= st.IV %></td>
+      <td><%= st.ESSID %></td>
+      <td><%= st.BSSID %></td>
+      <td><%= st.Channel %></td>
+      <td><%= st.Encryption %></td>
+      <td><%= st.Decrypted %></td>
+      <td><%= st.Data %></td>
+      <td><%= st.LastTime %></td>
 
     </tr>
   <% end %>
@@ -37,3 +37,6 @@
 
 <%= link_to "Home", networks_path %>
 <%= link_to "Test", test_path %>
+<%= link_to "Load", load_path %>
+<%= link_to "Kill", kill_path %>
+<%= link_to "Scan", scan_path %>
