@@ -1,51 +1,73 @@
-<h1>AirCrack GUIfi</h1>
-<br>
-<h2>Attacking Network</h2>
-
-<strong>Date and Time: </strong><span><%= @Date %></span><br>
-<strong>Hostname: </strong><span><%= @Hostname %></span><br>
-
-<strong>Attacking network: </strong><span><%= @Network_attack  %></span><br>
-<h2>20 deauthentiation packes will be send...</h2>
-<br>
-<br>
-
-<table>
-  <tr>
-    <th>GUIfi</th>
-  </tr>
-
-    <tr>
-      <td><%= @Network_attack.id %></td>
-      <td><%= @Network_attack.ESSID %></td>
-      <td><%= @Network_attack.BSSID %></td>
-      <td><%= @Network_attack.Channel %></td>
-      <td><%= @Network_attack.Encryption %></td>
-      <td><%= @Network_attack.Decrypted %></td>
-      <td><%= @Network_attack.LastTime %></td>
-    </tr>
-
-</table>
-<br>
-<br>
-<br>
-<h3> Stoping driver: </h3>
-<span> <%= @killall %> </span>
-<span> <%= @NetworkInf %> </span>
-<br>
-<br>
-<h3> Starting driver: </h3>
-<span> <%= @airmonstart %> </span>
-<br>
-<br>
-<h3> Attack output: </h3>
-<span> <%= @airreplayng %> </span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AirCrack GUIfi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
 
+  <div class="container">
+    <h2>Options</h2>
+    <button type="button" class="btn" onclick="window.location.href='/networks'" >Home</button>
+    <button type="button" class="btn btn-default" onclick="window.location.href='networks/test'" >Test</button>
+    <button type="button" class="btn btn-success"  onclick="window.location.href='networks/scan'" >Scan</button>
+    <button type="button" class="btn btn-primary"  onclick="window.location.href='networks/report'" >Report</button>
+    <button type="button" class="btn btn-warning" onclick="window.location.href='networks/load'" >Load static</button>
+    <button type="button" class="btn btn-danger" onclick="window.location.href='networks/kill'" >Kill</button>
+    <button type="button" class="btn btn-info" onclick="window.location.href='show'" >Show</button>
+  </div>
 
-<br>
-<br>
-<%= link_to "Home", networks_path %>
-<%= link_to "Test", test_path %>
-<%= link_to "Load", load_path %>
-<%= link_to "Kill", kill_path %>
+<div class="container">
+  <h2>Attacking Network...</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading">ATTACK: 20 deauthentiaction packets will be send...</div>
+    <div class="panel-body">
+
+      <table class="table table-hover">
+        <thead>
+
+        <tr>
+          <th>GUIfi</th>
+        </tr>
+
+          <tr>
+            <td><%= @Network_attack.id %></td>
+            <td><%= @Network_attack.ESSID %></td>
+            <td><%= @Network_attack.BSSID %></td>
+            <td><%= @Network_attack.Channel %></td>
+            <td><%= @Network_attack.Encryption %></td>
+            <td><%= @Network_attack.Decrypted %></td>
+            <td><%= @Network_attack.LastTime %></td>
+          </tr>
+
+
+    </tbody>
+  </table>
+
+
+    </div>
+
+    <div class="panel-body">
+
+      <h3> Stoping driver: </h3>
+      <span> <%= @killall %> </span>
+      <span> <%= @NetworkInf %> </span>
+      <br>
+      <br>
+      <h3> Starting driver: </h3>
+      <span> <%= @airmonstart %> </span>
+      <br>
+      <br>
+      <h3> Attack output: </h3>
+      <span> <%= @airreplayng %> </span>
+
+  </div>
+</div>
+
+</body>
+</html>

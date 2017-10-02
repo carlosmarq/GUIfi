@@ -1,42 +1,52 @@
-<h1> <strong>Identified networks</strong> </h1>
-<div>
-<br>
-<br>
-<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AirCrack GUIfi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<table>
-  <tr>
-    <th>GUIfi</th>
-  </tr>
-  <% @Networks.each do |st| %>
-    <tr>
-      <td><%= link_to "Attack", attack_path(st.id)%></td>
-      <td><%= st.id %></td>
-      <td><%= st.ESSID %></td>
-      <td><%= st.BSSID %></td>
-      <td><%= st.Channel %></td>
-      <td><%= st.Encryption %></td>
-      <td><%= st.Decrypted %></td>
-      <td><%= st.Data %></td>
-      <td><%= st.LastTime %></td>
+  <div class="container">
+    <h2>Options</h2>
+    <button type="button" class="btn" onclick="window.location.href='/networks'" >Home</button>
+    <button type="button" class="btn btn-default" onclick="window.location.href='networks/test'" >Test</button>
+    <button type="button" class="btn btn-success"  onclick="window.location.href='networks/scan'" >Scan</button>
+    <button type="button" class="btn btn-info" onclick="window.location.href='show'" >Show</button>
+    <button type="button" class="btn btn-primary"  onclick="window.location.href='networks/report'" >Report</button>
+    <button type="button" class="btn btn-warning" onclick="window.location.href='networks/load'" >Load static</button>
+    <button type="button" class="btn btn-danger" onclick="window.location.href='networks/kill'" >Kill</button>
+  </div>
 
-    </tr>
-  <% end %>
-</table>
+  <div class="container">
+    <h2>Wireless networks detected:</h2>
+    <p>Listing networks in 2.4 Ghz frequency:</p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>GUIfi</th>
+        </tr>
+        <% @Networks.each do |st| %>
+          <tr>
+            <td><%= link_to "Attack", attack_path(st.id)%></td>
+            <td><%= st.id %></td>
+            <td><%= st.ESSID %></td>
+            <td><%= st.BSSID %></td>
+            <td><%= st.Channel %></td>
+            <td><%= st.Encryption %></td>
+            <td><%= st.Decrypted %></td>
+            <td><%= st.Data %></td>
+            <td><%= st.LastTime %></td>
 
+          </tr>
+        <% end %>
 
-<br>
-<br>
-<br>
+      </tbody>
+    </table>
+  </div>
 
-<div>
-
-
-<h1><%= @Date %></h1>
-</div>
-
-<%= link_to "Home", networks_path %>
-<%= link_to "Test", test_path %>
-<%= link_to "Load", load_path %>
-<%= link_to "Kill", kill_path %>
-<%= link_to "Scan", scan_path %>
+  </body>
+  </html>

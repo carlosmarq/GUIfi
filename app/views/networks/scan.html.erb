@@ -1,18 +1,61 @@
-<h1>AirCrack GUIfi</h1>
-<br>
-<h2>Reading Aircrack output...</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AirCrack GUIfi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<span> <%= @NetworkInf  %> </span>
+  <div class="container">
+    <h2>Options</h2>
+    <button type="button" class="btn" onclick="window.location.href='/networks'" >Home</button>
+    <button type="button" class="btn btn-default" onclick="window.location.href='networks/test'" >Test</button>
+    <button type="button" class="btn btn-success"  onclick="window.location.href='networks/scan'" >Scan</button>
+    <button type="button" class="btn btn-info" onclick="window.location.href='show'" >Show</button>
+    <button type="button" class="btn btn-primary"  onclick="window.location.href='networks/report'" >Report</button>
+    <button type="button" class="btn btn-warning" onclick="window.location.href='networks/load'" >Load static</button>
+    <button type="button" class="btn btn-danger" onclick="window.location.href='networks/kill'" >Kill</button>
+  </div>
 
-<br>
-<span> <%= @Networks_scan %> </span>
+  <div class="container">
+    <h2>GUIfi wireless scanning...</h2>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1>Details:</h1></div>
 
-<h2>Loaded data:</h2>
-<span> <%= @Networks_text_to_csv %> </span>
+      <div class="panel-body">
+        <br>
+
+        <div class="row">
+          <div class="col-xm-6">
+            <h3>Wireless inerfase</h3>
+            <%= @NetworkInf %>
+          </div>
+        </div>
+      </div>
 
 
-<%= link_to "Home", networks_path %>
-<%= link_to "Test", test_path %>
-<%= link_to "Scan", scan_path %>
-<%= link_to "Load", load_path %>
-<%= link_to "Kill", kill_path %>
+
+            <div class="panel-body">
+              <br>
+
+              <div class="row">
+                <div class="col-xm-6">
+                  <h3>Information gattered</h3>
+                      <%= @Networks_text_to_csv %>
+                </div>
+              </div>
+
+
+
+
+    </div>
+  </div>
+
+
+  </body>
+  </html>
