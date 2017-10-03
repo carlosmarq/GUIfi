@@ -33,7 +33,7 @@ class NetworksController < ApplicationController
   def load
 
     #Networks_text = CSV.read("#{Rails.root}/public/seed.kismet-01.kismet.csv")
-    @Networks_text = File.read("#{Rails.root}/public/seed.kismet-*.kismet.csv", encoding: 'ISO-8859-1:UTF-8')
+    @Networks_text = File.read("#{Rails.root}/public/seed.kismet-01.kismet.csv", encoding: 'ISO-8859-1:UTF-8')
     @Networks_text_to_csv = @Networks_text.tr("\r", '')
 
     CSV.parse(@Networks_text_to_csv, :col_sep => ";") do |row|
